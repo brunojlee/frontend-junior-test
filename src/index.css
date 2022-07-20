@@ -8,7 +8,7 @@ html {
 }
 
 body {
-  background-color: var(--color-kle-400)
+  background-color: var(--color-kle-400);
 }
 
 :root {
@@ -19,5 +19,5 @@ body {
   --color-kle-300: #646464;
   --color-kle-400: #13152a;
   --color-kle-500: #000000;
-  --color-star-50: #707736;
+  --color-star-50: #edf74e;
 }
