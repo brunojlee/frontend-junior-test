@@ -12,7 +12,7 @@ function WalletProvider({ children }) {
     setLoading,
     isButtonShow,
     setIsButtonShow,
-  }), []);
+  }), [loading, isButtonShow]);
 
   return (
 
