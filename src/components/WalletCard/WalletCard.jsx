@@ -15,7 +15,7 @@ export default function WalletCard() {
         </tr>
         {
           walletLS.length > 0 && walletLS.map((wallet) => (
-            <WalletRowCard token={wallet.token} balance={wallet.balance} />
+            <WalletRowCard id={wallet.id} token={wallet.token} balance={wallet.balance} />
           ))
         }
       </tbody>

@@ -3,9 +3,9 @@ import { useNavigate } from 'react-router-dom';
 import Button from '../Button/Button';
 import WalletContext from '../../context/WalletContext';
 
-import './AddTokenCard.css';
+import './EditTokenCard.css';
 
-export default function AddTokenCard() {
+export default function EditTokenCard() {
   const { wallet, setWallet } = useContext(WalletContext);
   const [values, setValues] = useState({ id: 0, token: '', balance: '' });
   const [lastId, setLastId] = useState();
@@ -51,16 +51,16 @@ export default function AddTokenCard() {
   }, [wallet]);
 
   return (
-    <div className="addTokenContainer">
-      <div className="addTokenCardHeader">
-        <h3>Add Token</h3>
+    <div className="editTokenContainer">
+      <div className="EditTokenCardHeader">
+        <h3>Edit Token</h3>
         <Button buttonText="Voltar" buttonStyles={buttonStyles1} navigation="/" />
       </div>
-      <div className="addTokenInput">
+      <div className="editTokenInput">
         Token
         <input type="text" name="token" value={values.token} onChange={handleValues} />
       </div>
-      <div className="addBalanceInput">
+      <div className="editBalanceInput">
         Balance
         <input type="text" name="balance" value={values.balance} onChange={handleValues} />
       </div>

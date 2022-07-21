@@ -4,11 +4,14 @@ import './WalletRowCard.css';
 import { ReactComponent as EditIcon } from '../../assets/pencil-square.svg';
 
 function WalletRowCard(props) {
-  const { token, balance } = props;
+  const { id, token, balance } = props;
+  const handleClick = () => {
+    global.alert(`${id}`);
+  };
   return (
-    <tr key={token}>
+    <tr key={id}>
       <td className="editColumn">
-        <EditIcon />
+        <EditIcon name={id} onClick={handleClick} />
       </td>
       <td className="tokenColumn">{token}</td>
       <td className="balanceColumn">{balance}</td>
@@ -17,6 +20,7 @@ function WalletRowCard(props) {
 }
 
 WalletRowCard.propTypes = {
+  id: PropTypes.number.isRequired,
   token: PropTypes.string.isRequired,
   balance: PropTypes.string.isRequired,
 };
