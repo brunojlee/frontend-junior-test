@@ -5,8 +5,10 @@ import WalletContext from '../../context/WalletContext';
 
 import './Button.css';
 
-function AddButton(props) {
-  const { buttonStyles, buttonText, navigation } = props;
+function Button(props) {
+  const {
+    buttonStyles, buttonText, navigation, onclick,
+  } = props;
   const navigate = useNavigate();
   const {
     setLoading,
@@ -16,8 +18,10 @@ function AddButton(props) {
 
   const handleClick = () => {
     setLoading(true);
-    navigate(navigation);
     setIsButtonShow({ display: 'none' });
+    if (navigation) {
+      navigate(navigation);
+    }
   };
 
   const buttonCheck = buttonText === 'Add Token' ? isButtonShow.display : { display: 'flex' };
@@ -31,7 +35,7 @@ function AddButton(props) {
       <button
         className="button"
         type="button"
-        onClick={handleClick}
+        onClick={onclick || handleClick}
         style={buttonStyle}
       >
         { buttonText }
@@ -41,9 +45,9 @@ function AddButton(props) {
   );
 }
 
-AddButton.propTypes = {
+Button.propTypes = {
   buttonStyles: PropTypes.object,
   buttonText: PropTypes.string,
 }.isRequired;
 
-export default AddButton;
+export default Button;
