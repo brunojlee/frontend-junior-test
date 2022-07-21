@@ -15,7 +15,7 @@ export default function Header() {
           <Star className="star" />
           <div className="title">Wish Wallet</div>
         </div>
-        <Button buttonText="Add Token" buttonStyles={buttonStyles} />
+        <Button buttonText="Add Token" buttonStyles={buttonStyles} navigation="/AddToken" />
       </div>
     </div>
   );

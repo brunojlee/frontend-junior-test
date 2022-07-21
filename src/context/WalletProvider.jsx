@@ -5,7 +5,7 @@ import WalletContext from './WalletContext';
 
 function WalletProvider({ children }) {
   const [loading, setLoading] = useState(false);
-  const [isButtonShow, setIsButtonShow] = useState({ display: 'flex' });
+  const [isButtonShow, setIsButtonShow] = useState({ display: 'none' });
   const [wallet, setWallet] = useState([]);
 
   const context = useMemo(() => ({

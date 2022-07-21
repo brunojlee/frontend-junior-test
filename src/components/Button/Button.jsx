@@ -6,7 +6,7 @@ import WalletContext from '../../context/WalletContext';
 import './Button.css';
 
 function AddButton(props) {
-  const { buttonStyles, buttonText } = props;
+  const { buttonStyles, buttonText, navigation } = props;
   const navigate = useNavigate();
   const {
     setLoading,
@@ -16,7 +16,7 @@ function AddButton(props) {
 
   const handleClick = () => {
     setLoading(true);
-    navigate('/AddToken');
+    navigate(navigation);
     setIsButtonShow({ display: 'none' });
   };
 
@@ -27,9 +27,9 @@ function AddButton(props) {
   };
 
   return (
-    <div className="addButtonContainer">
+    <div className="buttonContainer">
       <button
-        className="addButton"
+        className="button"
         type="button"
         onClick={handleClick}
         style={buttonStyle}
