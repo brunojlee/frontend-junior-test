@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/frontend-junior-test/static/css/main.49c2dd4d.css",
-    "main.js": "/frontend-junior-test/static/js/main.8a88642d.js",
+    "main.css": "/frontend-junior-test/static/css/main.c456f295.css",
+    "main.js": "/frontend-junior-test/static/js/main.6060f4c2.js",
+    "static/media/pencil-square.svg": "/frontend-junior-test/static/media/pencil-square.3fbc410357e3250312a6a8f795909736.svg",
     "static/media/shooting-star.svg": "/frontend-junior-test/static/media/shooting-star.21fa54f5e707ca4aaefbe09fe7565232.svg",
     "static/media/logo.svg": "/frontend-junior-test/static/media/logo.e508030155275995c5f38fe7de486727.svg",
     "index.html": "/frontend-junior-test/index.html",
-    "static/media/pencil-square.svg": "/frontend-junior-test/static/media/pencil-square.893d9a908eb034cc9b01a01927cae96b.svg",
-    "main.49c2dd4d.css.map": "/frontend-junior-test/static/css/main.49c2dd4d.css.map",
-    "main.8a88642d.js.map": "/frontend-junior-test/static/js/main.8a88642d.js.map"
+    "main.c456f295.css.map": "/frontend-junior-test/static/css/main.c456f295.css.map",
+    "main.6060f4c2.js.map": "/frontend-junior-test/static/js/main.6060f4c2.js.map"
   },
   "entrypoints": [
-    "static/css/main.49c2dd4d.css",
-    "static/js/main.8a88642d.js"
+    "static/css/main.c456f295.css",
+    "static/js/main.6060f4c2.js"
   ]
 }
