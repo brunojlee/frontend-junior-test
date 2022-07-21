@@ -33,9 +33,9 @@ export default function AddTokenCard() {
     }));
   };
 
-  const handleClick = () => {
+  const handleClick = async () => {
     if (values.token.length > 0 && values.balance.length > 0) {
-      setWallet((prevTokenList) => [
+      await setWallet((prevTokenList) => [
         ...prevTokenList,
         values,
       ]);

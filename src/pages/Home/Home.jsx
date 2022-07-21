@@ -1,4 +1,4 @@
-import React, { useMemo, useContext } from 'react';
+import React, { useEffect, useContext } from 'react';
 import Header from '../../components/Header/Header';
 import WalletCard from '../../components/WalletCard/WalletCard';
 import WalletContext from '../../context/WalletContext';
@@ -12,7 +12,7 @@ export default function Home() {
     setIsButtonShow,
   } = useContext(WalletContext);
 
-  useMemo(() => {
+  useEffect(() => {
     if (loading) {
       setLoading(false);
     }
