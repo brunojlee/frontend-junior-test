@@ -1,14 +1,17 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 import './WalletRowCard.css';
+import { ReactComponent as EditIcon } from '../../assets/pencil-square.svg';
 
 function WalletRowCard(props) {
   const { token, balance } = props;
   return (
     <tr key={token}>
-      <td>EditIcon</td>
-      <td>{token}</td>
-      <td>{balance}</td>
+      <td className="editColumn">
+        <EditIcon />
+      </td>
+      <td className="tokenColumn">{token}</td>
+      <td className="balanceColumn">{balance}</td>
     </tr>
   );
 }
