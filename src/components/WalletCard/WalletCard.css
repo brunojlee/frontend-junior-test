@@ -1,3 +1,35 @@
+.walletCard {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+  padding: 20px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.walletCard td {
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+
 .editColumn {
-  display: none;
+  padding-right: 10px;
+  display: flex;
+  height: 50px;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-kle-50);
+}
+
+.tokenColumn {
+  text-align: left;
+  padding-left: 10px;
+  width: 150px;
+}
+
+.balanceColumn {
+  align-items: center;
+  text-align: right;
+  width: 300px;
 }
