@@ -8,11 +8,8 @@
 .addButton {
   padding: 5% 10%;
   font-family: 'Montserrat';
-  background-color: var(--color-kle-100);
   border: none;
-  color: var(--color-kle-50);
   font-size: 0.9rem;
   cursor: pointer;
-  
   border-radius: 5px;
 }

@@ -20,8 +20,9 @@ function AddButton(props) {
     setIsButtonShow({ display: 'none' });
   };
 
+  const buttonCheck = buttonText === 'Add Token' ? isButtonShow.display : { display: 'flex' };
   const buttonStyle = {
-    display: isButtonShow.display,
+    display: buttonCheck,
     ...buttonStyles,
   };
 
