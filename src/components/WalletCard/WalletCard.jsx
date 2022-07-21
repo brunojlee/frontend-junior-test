@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
+import WalletContext from '../../context/WalletContext';
 import WalletRowCard from '../WalletRowCard/WalletRowCard';
 import './WalletCard.css';
 
 export default function WalletCard() {
+  const { setSelectedToken, setWallet } = useContext(WalletContext);
+
   const walletLS = JSON.parse(localStorage.getItem('wallet')) || [];
+  useEffect(() => {
+    setSelectedToken(null);
+    setWallet(walletLS);
+  }, []);
 
   return (
     <table className="walletCard">

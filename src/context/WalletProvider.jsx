@@ -7,6 +7,7 @@ function WalletProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [isButtonShow, setIsButtonShow] = useState({ display: 'none' });
   const [wallet, setWallet] = useState([]);
+  const [selectedToken, setSelectedToken] = useState(null);
 
   const context = useMemo(() => ({
     loading,
@@ -15,7 +16,9 @@ function WalletProvider({ children }) {
     setIsButtonShow,
     wallet,
     setWallet,
-  }), [loading, isButtonShow, wallet]);
+    selectedToken,
+    setSelectedToken,
+  }), [loading, isButtonShow, wallet, selectedToken]);
 
   return (
 

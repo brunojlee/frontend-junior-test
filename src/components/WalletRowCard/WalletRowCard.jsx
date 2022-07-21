@@ -1,12 +1,18 @@
 import PropTypes from 'prop-types';
-import React from 'react';
-import './WalletRowCard.css';
+import React, { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as EditIcon } from '../../assets/pencil-square.svg';
+import WalletContext from '../../context/WalletContext';
+import './WalletRowCard.css';
 
 function WalletRowCard(props) {
   const { id, token, balance } = props;
-  const handleClick = () => {
-    global.alert(`${id}`);
+  const { setSelectedToken } = useContext(WalletContext);
+  const navigate = useNavigate();
+
+  const handleClick = async () => {
+    await setSelectedToken(id);
+    navigate('/EditToken');
   };
   return (
     <tr key={id}>

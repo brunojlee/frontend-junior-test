@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../Button/Button';
 import WalletContext from '../../context/WalletContext';
+import Button from '../Button/Button';
 
 import './EditTokenCard.css';
 
@@ -13,6 +13,7 @@ export default function EditTokenCard() {
 
   const buttonStyles1 = { color: 'var(--color-kle-50)', backgroundColor: 'var(--color-kle-300)' };
   const buttonStyles2 = { color: 'var(--color-kle-50)', backgroundColor: 'var(--color-kle-100)' };
+  const buttonStyles3 = { color: 'var(--color-kle-50)', backgroundColor: 'var(--color-kle-200)' };
 
   useEffect(() => {
     const walletLS = localStorage.getItem('wallet');
@@ -52,7 +53,7 @@ export default function EditTokenCard() {
 
   return (
     <div className="editTokenContainer">
-      <div className="EditTokenCardHeader">
+      <div className="editTokenCardHeader">
         <h3>Edit Token</h3>
         <Button buttonText="Voltar" buttonStyles={buttonStyles1} navigation="/" />
       </div>
@@ -64,8 +65,13 @@ export default function EditTokenCard() {
         Balance
         <input type="text" name="balance" value={values.balance} onChange={handleValues} />
       </div>
-      <div className="saveButtonContainer">
-        <Button buttonText="Save" buttonStyles={buttonStyles2} navigation="/" onclick={handleClick} />
+      <div className="buttons">
+        <div className="removeEditContainer">
+          <Button buttonText="Remove" buttonStyles={buttonStyles3} navigation="/" onclick={handleClick} />
+        </div>
+        <div className="saveEditContainer">
+          <Button buttonText="Save" buttonStyles={buttonStyles2} navigation="/" onclick={handleClick} />
+        </div>
       </div>
     </div>
   );
