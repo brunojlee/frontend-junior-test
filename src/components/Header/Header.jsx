@@ -1,7 +1,7 @@
 import React from 'react';
 import { ReactComponent as Logo } from '../../assets/logo.svg';
 import { ReactComponent as Star } from '../../assets/shooting-star.svg';
-import AddButton from '../AddButton/AddButton';
+import Button from '../Button/Button';
 import './Header.css';
 
 export default function Header() {
@@ -13,7 +13,7 @@ export default function Header() {
           <Star className="star" />
           <div className="title">Wish Wallet</div>
         </div>
-        <AddButton />
+        <Button buttonText="Add Token" buttonStyles={{ color: 'var(--color-kle-50)' }} />
       </div>
     </div>
   );

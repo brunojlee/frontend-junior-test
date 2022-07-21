@@ -1,10 +1,12 @@
+import PropTypes from 'prop-types';
 import React, { useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import WalletContext from '../../context/WalletContext';
 
-import './AddButton.css';
+import './Button.css';
 
-export default function AddButton() {
+function AddButton(props) {
+  const { buttonStyles, buttonText } = props;
   const navigate = useNavigate();
   const {
     setLoading,
@@ -18,17 +20,29 @@ export default function AddButton() {
     setIsButtonShow({ display: 'none' });
   };
 
+  const buttonStyle = {
+    display: isButtonShow.display,
+    ...buttonStyles,
+  };
+
   return (
     <div className="addButtonContainer">
       <button
         className="addButton"
         type="button"
         onClick={handleClick}
-        style={isButtonShow}
+        style={buttonStyle}
       >
-        Add Token
-      </button>
+        { buttonText }
 
+      </button>
     </div>
   );
 }
+
+AddButton.propTypes = {
+  buttonStyles: PropTypes.object,
+  buttonText: PropTypes.string,
+}.isRequired;
+
+export default AddButton;
