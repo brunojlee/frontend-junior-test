@@ -51,6 +51,12 @@ export default function EditTokenCard() {
     localStorage.setItem('wallet', JSON.stringify(wallet));
   }, [wallet]);
 
+  const removeToken = async () => {
+    const newWallet = wallet.filter((item) => item.id !== selectedToken.id);
+    await setWallet(newWallet);
+    navigate('/');
+  };
+
   return (
     <div className="editTokenContainer">
       <div className="editTokenCardHeader">
@@ -67,7 +73,7 @@ export default function EditTokenCard() {
       </div>
       <div className="buttons">
         <div className="removeEditContainer">
-          <Button buttonText="Remove" buttonStyles={buttonStyles3} navigation="/" onclick={handleClick} />
+          <Button buttonText="Remove" buttonStyles={buttonStyles3} navigation="/" onclick={removeToken} />
         </div>
         <div className="saveEditContainer">
           <Button buttonText="Save" buttonStyles={buttonStyles2} navigation="/" onclick={handleClick} />
