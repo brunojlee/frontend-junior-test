@@ -1,5 +1,5 @@
 import React from 'react';
-import WalletProvider from './context/WaleltProvider';
+import WalletProvider from './context/WalletProvider';
 import Routes from './Routes';
 
 function App() {

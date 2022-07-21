@@ -6,13 +6,16 @@ import WalletContext from './WalletContext';
 function WalletProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [isButtonShow, setIsButtonShow] = useState({ display: 'flex' });
+  const [wallet, setWallet] = useState([]);
 
   const context = useMemo(() => ({
     loading,
     setLoading,
     isButtonShow,
     setIsButtonShow,
-  }), [loading, isButtonShow]);
+    wallet,
+    setWallet,
+  }), [loading, isButtonShow, wallet]);
 
   return (
 
