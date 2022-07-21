@@ -7,7 +7,7 @@ function WalletProvider({ children }) {
   const [loading, setLoading] = useState(false);
   const [isButtonShow, setIsButtonShow] = useState({ display: 'none' });
   const [wallet, setWallet] = useState([]);
-  const [selectedToken, setSelectedToken] = useState(null);
+  const [selectedToken, setSelectedToken] = useState({});
 
   const context = useMemo(() => ({
     loading,

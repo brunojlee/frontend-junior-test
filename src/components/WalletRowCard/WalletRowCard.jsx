@@ -11,7 +11,7 @@ function WalletRowCard(props) {
   const navigate = useNavigate();
 
   const handleClick = async () => {
-    await setSelectedToken(id);
+    await setSelectedToken({ id, token, balance });
     navigate('/EditToken');
   };
   return (

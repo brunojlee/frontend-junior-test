@@ -6,9 +6,12 @@ import Button from '../Button/Button';
 import './EditTokenCard.css';
 
 export default function EditTokenCard() {
-  const { wallet, setWallet } = useContext(WalletContext);
-  const [values, setValues] = useState({ id: 0, token: '', balance: '' });
-  const [lastId, setLastId] = useState();
+  const {
+    wallet, setWallet, selectedToken, setIsButtonShow,
+  } = useContext(WalletContext);
+  const [values, setValues] = useState({
+    id: selectedToken.id, token: selectedToken.token, balance: selectedToken.balance,
+  });
   const navigate = useNavigate();
 
   const buttonStyles1 = { color: 'var(--color-kle-50)', backgroundColor: 'var(--color-kle-300)' };
@@ -16,34 +19,31 @@ export default function EditTokenCard() {
   const buttonStyles3 = { color: 'var(--color-kle-50)', backgroundColor: 'var(--color-kle-200)' };
 
   useEffect(() => {
-    const walletLS = localStorage.getItem('wallet');
-    if (walletLS) {
-      setWallet(JSON.parse(walletLS));
-      setLastId(JSON.parse(walletLS).length);
-    } else {
-      setLastId(0);
-    }
+    setIsButtonShow({ display: 'none' });
   }, []);
 
   const handleValues = (value) => {
-    const id = lastId + 1;
     setValues((prevValues) => ({
       ...prevValues,
-      id,
+      id: selectedToken.id,
       [value.target.name]: value.target.value,
     }));
   };
 
   const handleClick = async () => {
-    if (values.token.length > 0 && values.balance.length > 0) {
-      await setWallet((prevTokenList) => [
-        ...prevTokenList,
+    if (wallet.find(
+      (token) => token.token === values.token && values.token !== selectedToken.token,
+    )) {
+      global.alert('Token name already exists');
+    } else if (values.token.length > 0 && values.balance.length > 0) {
+      const newWallet = wallet.filter((item) => item.id !== selectedToken.id);
+      await setWallet(() => [
+        ...newWallet,
         values,
       ]);
-      setLastId((prevLastId) => prevLastId + 1);
       navigate('/');
     } else {
-      global.alert('Campos vazios');
+      global.alert('Empty field');
     }
   };
 
@@ -55,7 +55,7 @@ export default function EditTokenCard() {
     <div className="editTokenContainer">
       <div className="editTokenCardHeader">
         <h3>Edit Token</h3>
-        <Button buttonText="Voltar" buttonStyles={buttonStyles1} navigation="/" />
+        <Button buttonText="Back" buttonStyles={buttonStyles1} navigation="/" />
       </div>
       <div className="editTokenInput">
         Token

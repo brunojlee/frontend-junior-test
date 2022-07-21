@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Button from '../Button/Button';
 import WalletContext from '../../context/WalletContext';
+import Button from '../Button/Button';
 
 import './AddTokenCard.css';
 
@@ -34,7 +34,9 @@ export default function AddTokenCard() {
   };
 
   const handleClick = async () => {
-    if (values.token.length > 0 && values.balance.length > 0) {
+    if (wallet.find((token) => token.token === values.token)) {
+      global.alert('Token name already exists');
+    } else if (values.token.length > 0 && values.balance.length > 0) {
       await setWallet((prevTokenList) => [
         ...prevTokenList,
         values,
@@ -42,7 +44,7 @@ export default function AddTokenCard() {
       setLastId((prevLastId) => prevLastId + 1);
       navigate('/');
     } else {
-      global.alert('Campos vazios');
+      global.alert('Empty field');
     }
   };
 
@@ -54,7 +56,7 @@ export default function AddTokenCard() {
     <div className="addTokenContainer">
       <div className="addTokenCardHeader">
         <h3>Add Token</h3>
-        <Button buttonText="Voltar" buttonStyles={buttonStyles1} navigation="/" />
+        <Button buttonText="Back" buttonStyles={buttonStyles1} navigation="/" />
       </div>
       <div className="addTokenInput">
         Token
