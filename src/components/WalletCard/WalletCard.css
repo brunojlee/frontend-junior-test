@@ -20,6 +20,10 @@
   align-items: center;
 }
 
+.editColumn svg {
+  cursor: pointer;
+}
+
 .tokenColumn {
   text-align: left;
   padding-left: 10px;

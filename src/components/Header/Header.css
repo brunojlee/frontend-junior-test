@@ -9,6 +9,10 @@
   flex-direction: column;
 }
 
+.headerContainer .buttonContainer {
+  justify-content: flex-end;
+}
+
 .logo {
   width: 180px;
 }

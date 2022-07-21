@@ -20,6 +20,11 @@
   width: 440px;
   color: var(--color-kle-50);
 }
+
+.editTokenCardHeader .buttonContainer {
+  justify-content: flex-end;
+}
+
 .editTokenInput, .editBalanceInput {
   margin-top: 30px;
   display: flex;
@@ -39,11 +44,19 @@
   color: var(--color-kle-500);
 }
 
-.saveButtonContainer {
+.buttons {
   margin-top: 30px;
-
   display: flex;
-  justify-content: flex-end;
+  flex-direction: row;
   width: 440px;
-  color: var(--color-kle-50);
+  height: 33px;
+  justify-content: space-between;
+}
+
+.removeEditContainer {
+  justify-content: flex-start;
+}
+
+.saveEditContainer .buttonContainer {
+  justify-content: flex-end;
 }
