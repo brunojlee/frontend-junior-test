@@ -29,7 +29,7 @@ export default function AddTokenCard() {
     setValues((prevValues) => ({
       ...prevValues,
       id,
-      [value.target.name]: value.target.value,
+      [value.target.name]: value.target.value.toUpperCase(),
     }));
   };
 
@@ -60,7 +60,7 @@ export default function AddTokenCard() {
       </div>
       <div className="addTokenInput">
         Token
-        <input type="text" name="token" value={values.token} onChange={handleValues} />
+        <input type="text" name="token" value={values.token.toUpperCase()} onChange={handleValues} />
       </div>
       <div className="addBalanceInput">
         Balance

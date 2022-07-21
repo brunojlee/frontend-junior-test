@@ -26,7 +26,7 @@ export default function EditTokenCard() {
     setValues((prevValues) => ({
       ...prevValues,
       id: selectedToken.id,
-      [value.target.name]: value.target.value,
+      [value.target.name]: value.target.value.toUpperCase(),
     }));
   };
 
@@ -65,7 +65,7 @@ export default function EditTokenCard() {
       </div>
       <div className="editTokenInput">
         Token
-        <input type="text" name="token" value={values.token} onChange={handleValues} />
+        <input type="text" name="token" value={values.token.toUpperCase()} onChange={handleValues} />
       </div>
       <div className="editBalanceInput">
         Balance
