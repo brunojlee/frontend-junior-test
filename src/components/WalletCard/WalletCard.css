@@ -14,12 +14,10 @@
 }
 
 .editColumn {
-  padding-right: 10px;
   display: flex;
+  color: var(--color-kle-50);
   height: 50px;
   align-items: center;
-  justify-content: center;
-  color: var(--color-kle-50);
 }
 
 .tokenColumn {
