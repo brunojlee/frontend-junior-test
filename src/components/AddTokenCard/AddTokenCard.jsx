@@ -26,11 +26,23 @@ export default function AddTokenCard() {
 
   const handleValues = (value) => {
     const id = lastId + 1;
-    setValues((prevValues) => ({
-      ...prevValues,
-      id,
-      [value.target.name]: value.target.value.toUpperCase(),
-    }));
+    if (value.target.name === 'token') {
+      setValues((prevValues) => ({
+        ...prevValues,
+        id,
+        [value.target.name]: value.target.value.toUpperCase(),
+      }));
+    } else {
+      const balance = value.target.value
+        .replace(/\D/g, '')
+        .replace(/(\d)(\d{2})$/, '$1.$2')
+        .replace(/(?=(\d{3})+(\D))\B/g, ',');
+      setValues((prevValues) => ({
+        ...prevValues,
+        id,
+        [value.target.name]: balance,
+      }));
+    }
   };
 
   const handleClick = async () => {

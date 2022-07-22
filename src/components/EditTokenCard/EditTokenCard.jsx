@@ -25,11 +25,23 @@ export default function EditTokenCard() {
   }, []);
 
   const handleValues = (value) => {
-    setValues((prevValues) => ({
-      ...prevValues,
-      id: selectedToken.id,
-      [value.target.name]: value.target.value.toUpperCase(),
-    }));
+    if (value.target.name === 'token') {
+      setValues((prevValues) => ({
+        ...prevValues,
+        id: selectedToken.id,
+        [value.target.name]: value.target.value.toUpperCase(),
+      }));
+    } else {
+      const balance = value.target.value
+        .replace(/\D/g, '')
+        .replace(/(\d)(\d{2})$/, '$1.$2')
+        .replace(/(?=(\d{3})+(\D))\B/g, ',');
+      setValues((prevValues) => ({
+        ...prevValues,
+        id: selectedToken.id,
+        [value.target.name]: balance,
+      }));
+    }
   };
 
   const handleClick = async () => {
