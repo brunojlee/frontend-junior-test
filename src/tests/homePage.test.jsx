@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import React from 'react';
 import { MemoryRouter } from 'react-router-dom';
+
 import App from '../App';
 
 describe('Teste a Home page />', () => {
@@ -11,11 +12,11 @@ describe('Teste a Home page />', () => {
         <App />
       </MemoryRouter>,
     );
-    const homeLinkText = screen.getByText(/Wallet/i);
-    expect(homeLinkText).toBeInTheDocument();
+    const walletText = screen.getByText(/Wallet/i);
+    expect(walletText).toBeInTheDocument();
     const buttonElement = screen.getByRole('button', { name: /Add Token/i });
     userEvent.click(buttonElement);
-    const navLinks = screen.getByRole('button', { name: /Back/i });
-    expect(navLinks).toBeDefined();
+    const backButton = screen.getByRole('button', { name: /Back/i });
+    expect(backButton).toBeDefined();
   });
 });
