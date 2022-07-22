@@ -12,6 +12,11 @@
   font-size: 40px;
   padding-bottom: 20px;
 }
+@media (max-width: 500px) {
+  .walletCard td {
+    font-size: 25px;
+  }
+}
 
 .editColumn {
   display: flex;
