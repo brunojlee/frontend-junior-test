@@ -17,7 +17,7 @@ function WalletRowCard(props) {
   return (
     <tr key={id}>
       <td className="editColumn">
-        <EditIcon name={id} onClick={handleClick} />
+        <EditIcon data-testid="edit-icon" name={id} onClick={handleClick} />
       </td>
       <td className="tokenColumn">{token}</td>
       <td className="balanceColumn">{balance}</td>
