@@ -67,10 +67,13 @@ export default function EditTokenCard() {
   };
 
   const removeToken = async () => {
-    const newWallet = wallet.filter((item) => item.id !== selectedToken.id);
-    localStorage.setItem('wallet', JSON.stringify(newWallet));
-    await setWallet(newWallet);
-    navigate('/');
+    const resultado = global.confirm(`Are you sure you want to remove ${selectedToken.token}?`);
+    if (resultado === true) {
+      const newWallet = wallet.filter((item) => item.id !== selectedToken.id);
+      localStorage.setItem('wallet', JSON.stringify(newWallet));
+      await setWallet(newWallet);
+      navigate('/');
+    }
   };
 
   useEffect(() => {
