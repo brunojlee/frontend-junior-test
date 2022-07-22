@@ -8,6 +8,11 @@
   width: 600px;
   flex-direction: column;
 }
+@media (max-width: 500px) {
+  .headerContainer {
+    width: 300px;
+  }
+}
 
 .headerContainer .buttonContainer {
   justify-content: flex-end;
@@ -28,6 +33,12 @@
   height: 50px;
   width: 500px;
   color: var(--color-kle-50);
+}
+@media (max-width: 500px) {
+  .lowHeaderContainer{
+    flex-direction: column;
+    width: 300px;
+  }
 }
 
 .starContainer {

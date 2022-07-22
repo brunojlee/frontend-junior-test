@@ -9,6 +9,12 @@
   height: 100%;
   padding-top: 20px
 }
+@media (max-width: 500px) {
+  .editTokenContainer {
+    width: 300px;
+    padding-left: 0;
+  }
+}
 
 .editTokenCardHeader {
   display: flex;
@@ -20,9 +26,10 @@
   width: 440px;
   color: var(--color-kle-50);
 }
-
-.editTokenCardHeader .buttonContainer {
-  justify-content: flex-end;
+@media (max-width: 500px) {
+  .editTokenCardHeader {
+    width: 300px;
+  }
 }
 
 .editTokenInput, .editBalanceInput {
@@ -33,6 +40,12 @@
   width: 440px;
   border-radius: 5px;
 }
+@media (max-width: 500px) {
+  .editTokenInput, .editBalanceInput {
+    width: 300px;
+  }
+}
+
 .editTokenInput input, .editBalanceInput input {
   margin-top: 0.5rem;
   width: 420px;
@@ -43,6 +56,11 @@
   font-family: 'Montserrat';
   color: var(--color-kle-500);
 }
+@media (max-width: 500px) {
+  .editTokenInput input, .editBalanceInput input {
+    width: 280px;
+  }
+}
 
 .buttons {
   margin-top: 30px;
@@ -52,11 +70,16 @@
   height: 33px;
   justify-content: space-between;
 }
-
-.removeEditContainer {
-  justify-content: flex-start;
+@media (max-width: 500px) {
+  .buttons {
+    width: 300px;
+  }
 }
 
-.saveEditContainer .buttonContainer {
+.saveEditContainer, .buttonContainer {
   justify-content: flex-end;
+}
+
+.removeEditContainer > div {
+  justify-content: flex-start;
 }

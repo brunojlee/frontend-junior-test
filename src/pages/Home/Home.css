@@ -7,3 +7,8 @@
   
   width: 600px;
 }
+@media (max-width: 500px) {
+  .homePage {
+    width: 300px;
+  }
+}
